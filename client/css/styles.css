@@ -1,0 +1,397 @@
+:root {
+  --bg-primary: #0b0b0f;
+  --bg-card: rgba(17,18,23,0.6);
+  --text-color: white;
+}
+
+.light-theme {
+  --bg-primary: #f5f7fa;
+  --bg-card: rgba(255,255,255,0.8);
+  --text-color: #111;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+}
+
+.card {
+  background: var(--bg-card);
+}
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Body styling */
+body {
+  background: linear-gradient(120deg, #0b0b0f, #001f3f, #0b0b0f);
+  background-size: 200% 200%;
+  animation: gradientMove 20s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   BACKGROUND GRADIENT
+========================= */
+
+body {
+  background: radial-gradient(circle at 20% 20%, #001f3f, #0b0b0f 60%);
+  background-attachment: fixed;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+/* Card design */
+.card {
+  background: rgba(17, 18, 23, 0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Inputs */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #1f1f2a;
+  background-color: #0e0e14;
+  color: white;
+}
+
+/* Buttons */
+button {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background-color: #007aff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #005fcc;
+}
+
+.btn-danger {
+  background-color: #ff3b30;
+  color: white;
+}
+
+.btn-success {
+  background-color: #34c759;
+  color: white;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #1f1f2a;
+}
+
+th {
+  color: #888;
+}
+
+/* Summary numbers */
+.positive {
+  color: #34c759;
+}
+
+.negative {
+  color: #ff3b30;
+}
+
+/* Layout grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Auth Layout */
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.auth-left {
+  flex: 1;
+  background: linear-gradient(135deg, #0b0b0f, #001f3f);
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-left h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.tagline {
+  color: #007aff;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.description {
+  color: #aaa;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.auth-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0b0b0f;
+}
+
+/* =========================
+   GLOBAL TRANSITIONS
+========================= */
+
+.card,
+button,
+input,
+select {
+  transition: all 0.25s ease;
+}
+
+/* Smooth hover lift */
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Button hover animation */
+button:hover {
+  transform: scale(1.03);
+}
+
+/* Input focus animation */
+input:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #007aff;
+  box-shadow: 0 0 8px rgba(0, 122, 255, 0.4);
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.topbar h1 {
+  font-size: 24px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+  .auth-container {
+    flex-direction: column;
+  }
+
+  .auth-left {
+    padding: 40px 30px;
+  }
+
+  .auth-right {
+    padding: 40px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
+.dots::after {
+  content: '';
+  animation: dots 1s infinite;
+}
+
+@keyframes dots {
+  0% { content: ''; }
+  33% { content: '.'; }
+  66% { content: '..'; }
+  100% { content: '...'; }
+}
+
+.summary-fade {
+  opacity: 0.3;
+  transition: opacity 0.25s ease;
+}
+
+/* =========================
+   CUSTOM SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#007aff, #005fcc);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#339cff, #007aff);
+}
+
+/* =========================
+   RIPPLE EFFECT
+========================= */
+
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 600ms linear;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   ROW ANIMATION
+========================= */
+
+.row-enter {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rowFadeIn 0.4s ease forwards;
+}
+
+@keyframes rowFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   FLOATING ACTION BUTTON
+========================= */
+
+.fab {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #007aff;
+  color: white;
+  font-size: 28px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.fab:hover {
+  background: #005fcc;
+  transform: scale(1.1);
+}
