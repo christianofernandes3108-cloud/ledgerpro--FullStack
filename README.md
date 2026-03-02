@@ -8,6 +8,38 @@ This project goes beyond basic CRUD applications by implementing aggregation que
 
 ---
 
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login](UI Screenshots/login.png)
+
+---
+
+### 📝 Register Page
+![Register](UI Screenshots/register.png)
+
+---
+
+### 📊 Dashboard Overview
+![Dashboard](UI Screenshots/monthly overview.png)
+
+---
+
+### 🗂 Category Management
+![Categories](UI Screenshots/categories.png)
+
+---
+
+### 💳 Transactions Table
+![Transactions](UI Screenshots/transactions.png)
+
+---
+
+### 📈 Add Transactions
+![Add Transactions](UI Screenshots/add_transactions.png)
+
+---
+
 ## 🚀 Features
 
 ### 🔐 Authentication
