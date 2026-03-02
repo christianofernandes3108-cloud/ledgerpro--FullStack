@@ -26,7 +26,7 @@ const createTransaction = async (req, res) => {
     // Verify category belongs to user
     const categoryCheck = await pool.query(
       `
-      SELECT * FROM categories
+      SELECT * FROM ledger_categories
       WHERE id = $1 AND user_id = $2
       `,
       [category_id, userId]
