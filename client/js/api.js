@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://ledgerpro-fullstack.onrender.com/api";
 
 // Get token from localStorage
 function getToken() {
