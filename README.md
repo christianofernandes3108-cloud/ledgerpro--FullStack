@@ -21,7 +21,7 @@ This project goes beyond basic CRUD applications by implementing aggregation que
 ---
 
 ### 📊 Dashboard Overview
-![Dashboard](screenshots/monthly overview.png)
+![Dashboard](screenshots/monthly_overview.png)
 
 ---
 
