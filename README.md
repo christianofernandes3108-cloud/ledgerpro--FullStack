@@ -6,6 +6,8 @@ LedgerPro is a full-stack personal finance and expense tracking application buil
 
 This project goes beyond basic CRUD applications by implementing aggregation queries, derived financial calculations, ownership enforcement, and structured reporting endpoints.
 
+Live Link: https://ledgerprov1.netlify.app/
+
 ---
 
 ## 📸 Screenshots
