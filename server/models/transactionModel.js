@@ -16,7 +16,7 @@ const createTransaction = async (
 ) => {
   const result = await pool.query(
     `
-    INSERT INTO transactions 
+    INSERT INTO ledger_transactions 
     (user_id, type, amount, category_id, description, date)
     VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *
@@ -38,8 +38,8 @@ const getTransactions = async (
 
   let query = `
     SELECT t.*, c.name AS category_name
-    FROM transactions t
-    LEFT JOIN categories c ON t.category_id = c.id
+    FROM ledger_transactions t
+    LEFT JOIN ledger_categories c ON t.category_id = c.id
     WHERE t.user_id = $1
   `;
 
@@ -75,7 +75,7 @@ const getTransactions = async (
 const deleteTransaction = async (transactionId, userId) => {
   const result = await pool.query(
     `
-    DELETE FROM transactions
+    DELETE FROM ledger_transactions
     WHERE id = $1 AND user_id = $2
     RETURNING *
     `,

@@ -21,7 +21,7 @@ const getMonthlySummary = async (req, res) => {
       SELECT 
         COALESCE(SUM(CASE WHEN type = 'income' THEN amount END), 0) AS total_income,
         COALESCE(SUM(CASE WHEN type = 'expense' THEN amount END), 0) AS total_expenses
-      FROM transactions
+      FROM ledger_transactions
       WHERE user_id = $1
         AND DATE_TRUNC('month', date) = DATE_TRUNC('month', $2::date)
       `,
@@ -58,8 +58,8 @@ const getCategoryBreakdown = async (req, res) => {
       `
       SELECT c.name AS category,
              SUM(t.amount) AS total
-      FROM transactions t
-      JOIN categories c ON t.category_id = c.id
+      FROM ledger_transactions t
+      JOIN ledger_categories c ON t.category_id = c.id
       WHERE t.user_id = $1
         AND t.type = 'expense'
         AND DATE_TRUNC('month', t.date) = DATE_TRUNC('month', $2::date)
@@ -90,7 +90,7 @@ const getRunningBalance = async (req, res) => {
     const result = await pool.query(
       `
       SELECT date, type, amount
-      FROM transactions
+      FROM ledger_transactions
       WHERE user_id = $1
       ORDER BY date ASC
       `,

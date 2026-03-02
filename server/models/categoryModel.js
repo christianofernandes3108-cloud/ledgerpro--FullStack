@@ -9,7 +9,7 @@ for the categories table.
 const createCategory = async (userId, name, type) => {
   const result = await pool.query(
     `
-    INSERT INTO categories (user_id, name, type)
+    INSERT INTO ledger_categories (user_id, name, type)
     VALUES ($1, $2, $3)
     RETURNING *
     `,
@@ -23,7 +23,7 @@ const createCategory = async (userId, name, type) => {
 const getCategoriesByUser = async (userId) => {
   const result = await pool.query(
     `
-    SELECT * FROM categories
+    SELECT * FROM ledger_categories
     WHERE user_id = $1
     ORDER BY created_at DESC
     `,
@@ -37,7 +37,7 @@ const getCategoriesByUser = async (userId) => {
 const deleteCategory = async (categoryId, userId) => {
   const result = await pool.query(
     `
-    DELETE FROM categories
+    DELETE FROM ledger_categories
     WHERE id = $1 AND user_id = $2
     RETURNING *
     `,
